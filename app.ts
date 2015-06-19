@@ -1,19 +1,6 @@
 import {Component, View, bootstrap, NgFor} from "angular2/angular2";
 import {loadFile, preloadFile} from "audioFile";
 
-/*
-function updateSelection() {
-    var fileList = <HTMLSelectElement> document.getElementById("fileSelect");
-    var selectedFile = fileList.options[fileList.selectedIndex];
-    var waveFile = loadFile("data/" + selectedFile.innerHTML, displayAudioFile);
-}
-
-loadFile("data/tada.wav", displayAudioFile);
-
-var fileList = <HTMLSelectElement> document.getElementById("fileSelect");
-fileList.onchange = updateSelection; 
-*/
-
 @Component({ selector: 'wave-view' })
 @View({
 	template: `
