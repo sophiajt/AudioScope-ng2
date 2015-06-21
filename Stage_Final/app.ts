@@ -9,7 +9,7 @@ import {renderAudioFile} from "renderAudio";
 		<polyline [attr.points]="displayPoints" stroke-width="1" stroke="black"/>
 	</svg>
 	<br />
-	<select id="myNgSelect" size="5" (change)="updateSelect(this)">
+	<select id="myNgSelect" size="5">
 		<option *ng-for="#item of items; #i = index" () [selected]="selected === item" (click)="updateSelect(item)"> {{ item }} </option>
 	</select>
 	<button (click)="decreaseScale()" >-</button>
