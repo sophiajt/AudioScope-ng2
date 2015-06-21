@@ -1,5 +1,6 @@
 import {Component, View, bootstrap, NgFor} from "angular2/angular2";
 import {loadFile, preloadFile} from "audioFile";
+import {renderAudioFile} from "renderAudio";
 
 @Component({ selector: 'wave-view' })
 @View({
@@ -51,20 +52,10 @@ class MyDisplay {
 		var c = { width: 300, height: 300 };
 
 	    var scaleFactor = 3.0 * this.scale;
-
-		this.displayPoints = `0, ${c.height / 2 } `;
-
-	    for (var x = 0; x < c.width; ++x) {
-	        var nextPt = waveFile.data[((waveFile.dataLength / c.width) * x) >> 0];
-	        var scaledPt;
-	        if (waveFile.bitsPerSample == 16) {
-	            scaledPt = (nextPt / 32768) * (c.height / 2) * scaleFactor;
-	        } else if (waveFile.bitsPerSample == 8) {
-	            scaledPt = ((nextPt - 128) / 128) * (c.height / 2) * scaleFactor;
-	        }
-			this.displayPoints += `${x}, ${c.height / 2 + scaledPt} `;
-	    }
-		console.log("Polyline: " + this.displayPoints);
+		
+		this.displayPoints = renderAudioFile(waveFile, scaleFactor, c);
+		
+		//console.log("Polyline: " + this.displayPoints);
 	}
 }
 
