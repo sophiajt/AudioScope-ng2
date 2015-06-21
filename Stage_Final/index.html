@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <title>Audio File Viewer</title>
-    <!--<script data-main="app.js" src="require.js"></script>-->
     <link rel="stylesheet" href="app.css" type="text/css" />
     <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.87/traceur-runtime.js"></script>
     <script src="https://jspm.io/system@0.16.js"></script>
@@ -14,27 +13,8 @@
 <body>
     <h1>Audio File Viewer</h1>
 
-    <table>
-        <tr>
-            <wave-view></wave-view>
-            <script>System.import("app");</script>
-            <!--
-            <td>
-                <canvas id="WaveView" height="300" width="500" style="border: 1px solid #000000;"></canvas>
-            </td>
-            
-            <td>
-                <select id="fileSelect" size="5">
-                    <option>chimes.wav</option>
-                    <option>chord.wav</option>
-                    <option>ding.wav</option>
-                    <option>notify.wav</option>
-                    <option selected>tada.wav</option>
-                </select>
-            </td>
-            -->
-        </tr>
-    </table>
+    <wave-view></wave-view>
+    <script>System.import("app");</script>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ import {renderAudioFile} from "renderAudio";
 @Component({ selector: 'wave-view' })
 @View({
 	template: `
-	<svg width="300" height="300" viewPort="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<svg width="500" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
 		<polyline [attr.points]="displayPoints" stroke-width="1" stroke="black"/>
 	</svg>
 	<br />
@@ -49,13 +49,11 @@ class MyDisplay {
 		if (!this.selected) return;
 		console.log("About to draw: " + "data/" + this.selected);
 		var waveFile = loadFile("data/" + this.selected);
-		var c = { width: 300, height: 300 };
+		var c = { width: 500, height: 300 };
 
 	    var scaleFactor = 3.0 * this.scale;
 		
 		this.displayPoints = renderAudioFile(waveFile, scaleFactor, c);
-		
-		//console.log("Polyline: " + this.displayPoints);
 	}
 }
 
