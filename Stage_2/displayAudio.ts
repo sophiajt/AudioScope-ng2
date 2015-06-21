@@ -1,5 +1,5 @@
 function displayAudioFile(waveFile) {
-    var c = document.getElementById("WaveView");
+    var c = <HTMLCanvasElement>document.getElementById("WaveView");
     var ctx = c.getContext("2d");
 
     var scaleFactor = 3.0;
@@ -17,7 +17,7 @@ function displayAudioFile(waveFile) {
         if (waveFile.bitsPerSample == 16) {
             scaledPt = (nextPt / 32768) * (c.height / 2) * scaleFactor;
         } else if (waveFile.bitsPerSample == 8) {
-            scaledPt = ((nextPt - 128) / 128) * (c.height / 2) * scaleFacter;
+            scaledPt = ((nextPt - 128) / 128) * (c.height / 2) * scaleFactor;
         }
         ctx.lineTo(x, (c.height / 2) + scaledPt);
         ctx.stroke();

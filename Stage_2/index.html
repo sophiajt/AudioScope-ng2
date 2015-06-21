@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Audio File Viewer</title>
+    <script src="audioFile.js"></script>
+    <script src="displayAudio.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+</head>
+<body>
+    <h1>Audio File Viewer</h1>
+
+    <audio id="tada" src="data/tada.wav"></audio>
+
+    <table>
+        <tr>
+            <td>
+                <canvas id="WaveView" height="300" width="500" style="border: 1px solid #000000;"></canvas>
+            </td>
+            <td>
+                <select id="fileSelect" onchange="updateSelection();" size="5">
+                    <option>chimes.wav</option>
+                    <option>chord.wav</option>
+                    <option>ding.wav</option>
+                    <option>notify.wav</option>
+                    <option selected>tada.wav</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
